@@ -1,5 +1,4 @@
 <?php
-// or a simple PHP function
 
 include __DIR__.'/../../vendor/autoload.php';
 

@@ -2,6 +2,7 @@
 
 include __DIR__.'/../../vendor/autoload.php';
 
+use Rhidja\Twig\Filter\RotFilter;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use Twig\TwigFilter;
@@ -12,8 +13,7 @@ $twig = new Environment($loader, [
     'auto_reload' => true,
 ]);
 
-// or a class static method
-$filter = new TwigFilter('rot_13', 'Rhidja\\Twig\\Filter\\RotFilter::rot13Filter');
+$filter = new TwigFilter('rot_13', [RotFilter::class, 'rot13Filter']);
 
 $twig->addFilter($filter);
 
