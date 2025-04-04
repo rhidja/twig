@@ -13,11 +13,11 @@ $twig = new Environment($loader, [
     'auto_reload' => true,
 ]);
 
-$strRot13Filter = new TwigFilter('rot_13', 'rot_php_function');
+$filter = new TwigFilter('rot_13', 'rot_php_function');
 
-$twig->addFilter($strRot13Filter);
+$twig->addFilter($filter);
 
-echo $twig->render('filter/php_function.html.twig');
+echo $twig->render('filter/rot_13.html.twig');
 
 function rot_php_function($string)
 {

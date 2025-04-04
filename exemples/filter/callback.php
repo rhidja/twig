@@ -13,10 +13,10 @@ $twig = new Environment($loader, [
     'auto_reload' => true,
 ]);
 
-$filterRot13 = new TwigFilter('rot_13', function ($string) {
+$filter = new TwigFilter('rot_13', function ($string) {
     return str_rot13($string);
 });
 
-$twig->addFilter($filterRot13);
+$twig->addFilter($filter);
 
-echo $twig->render('filter/callback.html.twig');
+echo $twig->render('filter/rot_13.html.twig');
