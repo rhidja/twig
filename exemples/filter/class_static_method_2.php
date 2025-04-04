@@ -1,16 +1,10 @@
 <?php
 
-include __DIR__.'/../../vendor/autoload.php';
+$twig = null;
 
-use Twig\Loader\FilesystemLoader;
-use Twig\Environment;
+include __DIR__.'/../app.php';
+
 use Twig\TwigFilter;
-
-$loader = new FilesystemLoader('./templates');
-$twig = new Environment($loader, [
-    'cache' => './caches',
-    'auto_reload' => true,
-]);
 
 $filter = new TwigFilter('rot_13', 'Rhidja\\Twig\\Filter\\RotFilter::rot13Filter');
 
