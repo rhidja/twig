@@ -1,0 +1,16 @@
+This is rendered from the main template.
+
+<br>
+
+{{ include('function/include_sub.html.twig') }}
+
+
+{{ include('function/include_fake.html.twig', ignore_missing: true) }}
+
+<br>
+
+{{ include(['function/include_fake.html.twig', 'function/include_sub.html.twig']) }}
+
+<br>
+
+{{ include('function/include_sandbox.html.twig', sandboxed: true) }}
