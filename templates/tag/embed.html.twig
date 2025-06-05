@@ -1,0 +1,19 @@
+{% set base_layout = 'tag/embed_base.html.twig' %}
+{% extends base_layout %}
+
+{% block content %}
+    This is a main template.<br>
+    {% embed "tag/embed_vertical.html.twig" with {name: 'Ramtane'} %}
+
+        {% block top %}
+            {{ parent() }}
+            Top box overridden content<br>
+        {% endblock top %}
+
+        {% block bottom %}
+            {{ parent() }}
+            Bottom box overridden content<br>
+        {% endblock bottom %}
+
+    {% endembed %}
+{% endblock content %}
