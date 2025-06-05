@@ -1,0 +1,14 @@
+{% extends 'tag/base.html.twig' %}
+
+{% block body %}
+    {{ _self.welcome('Ramtane') }}
+{% endblock %}
+
+{% block sidebar %}
+    Sidebar
+{% endblock %}
+
+{% macro welcome(name) %}
+    {% deprecated 'The "welcome" macro is deprecated, use "hello" instead.' %}
+    Hellooooooooooooo {{ name }} ...
+{% endmacro %}
