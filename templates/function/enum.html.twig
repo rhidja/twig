@@ -1,0 +1,19 @@
+{{ enum('Rhidja\\Twig\\Function\\Status').Draft.value }}
+
+<br>
+
+{% for case in enum('Rhidja\\Twig\\Function\\Status').cases %}
+    {{ case.value }}
+{% endfor %}
+
+<br>
+
+{% for case in enum_cases('Rhidja\\Twig\\Function\\Status') %}
+    {{ case.value }}
+{% endfor %}
+
+<br>
+
+{% for case in enum('Rhidja\\Twig\\Function\\Status').values %}
+    {{ case.value }}
+{% endfor %}
