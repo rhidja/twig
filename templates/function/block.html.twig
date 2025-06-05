@@ -1,0 +1,21 @@
+<title>
+    {% block title 'This is title' %}
+</title>
+
+<h1>{{ block('title') }}</h1>
+
+{% block body %}
+    This is a body
+{% endblock %}
+
+<br>
+
+{{ block('sub', 'function/block_sub.html.twig') }}
+
+{% if block("footer") is defined %}
+    ...
+{% endif %}
+
+{% if block("footer", "function/block_sub.html.twig") is defined %}
+    ...
+{% endif %}
