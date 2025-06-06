@@ -1,0 +1,19 @@
+{#{% import "tag/macro_forms.html.twig" as forms %}#}
+
+{#<p>{{ forms.input('username') }}</p>#}
+{#<p>{{ forms.input('password', null, 'password') }}</p>#}
+
+{# You can also use named arguments#}
+{#<p>{{ forms.input(name: 'password', type: 'password') }}</p>#}
+
+{% from 'tag/macro_forms.html.twig' import input as text_field, textarea as textarea_field %}
+
+<p>{{ text_field('password', '', 'password') }}</p>
+<p>{{ text_field(name: 'password', type: 'password') }}</p>
+<p>{{ textarea_field('comment') }}</p>
+
+{% if integer_field is defined -%}
+    Macro is defined
+{% else %}
+    Macro is not defined
+{% endif %}
