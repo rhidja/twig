@@ -1,0 +1,21 @@
+{% extends "tag/extends_base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block post %}
+    <article>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content }}</p>
+    </article>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ block('title') }}</h1>
+    <p>Welcome on my awesome homepage.</p>
+
+    {{ parent() }}
+{% endblock %}

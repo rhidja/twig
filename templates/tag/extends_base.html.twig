@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+        <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+</head>
+
+<body>
+    <div id="content">
+        {% block content %}
+            {% for post in posts %}
+                {% block post %}
+                    <h1>{{ post.title }}</h1>
+                    <p>{{ post.body }}</p>
+                {% endblock %}
+            {% endfor %}
+        {% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+            &copy; Copyright 2011 by <a href="https://example.com/">you</a>.
+        {% endblock %}
+    </div>
+</body>
+</html>
